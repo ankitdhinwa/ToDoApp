@@ -6,20 +6,20 @@ https://fontawesome.com/docs/web/use-with/react/
 <br>
 and install: 
 <br>
-<h1>1.Add SVG core:</h1>
+<h2>1.Add SVG core:</h2>
 <br>
-__npm i --save @fortawesome/fontawesome-svg-core__
+npm i --save @fortawesome/fontawesome-svg-core
 <br>
-<h1>2.Add Icon Packages: </h1>
+<h2>2.Add Icon Packages: </h2>
 <br>
 Free icons styles 
 <br>
-__npm i --save @fortawesome/free-solid-svg-icons__
+npm i --save @fortawesome/free-solid-svg-icons
 <br>
-__npm i --save @fortawesome/free-regular-svg-icons__
+npm i --save @fortawesome/free-regular-svg-icons
 <br>
-__npm i --save @fortawesome/free-brands-svg-icons__
+npm i --save @fortawesome/free-brands-svg-icons
 <br>
-<h1>3.Add the React Component:</h1>
+<h2>3.Add the React Component:</h2>
 <br>
-__npm i --save @fortawesome/react-fontawesome@latest__
+npm i --save @fortawesome/react-fontawesome@latest
