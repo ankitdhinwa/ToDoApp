@@ -6,11 +6,14 @@ const TodoForm = (props) => {
     setinputVal(event.target.value);
   };
 
-  const submitHandler = (event) =>{
+  const submitHandler = (event) => {
     event.preventDefault();
-    props.addTodo(inputVal);
-    setinputVal("");
-  }
+    if(inputVal){
+        props.addTodo(inputVal);
+        setinputVal("");
+    }
+    
+  };
   return (
     <form className="TodoForm" onSubmit={submitHandler}>
       <input
