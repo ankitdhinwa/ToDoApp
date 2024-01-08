@@ -1,4 +1,4 @@
-#This is React Application which is used to maintain To Do List.
+##  This is React Application which is used to maintain To Do List.
 <br>
 To style todos use : 
 <br>
