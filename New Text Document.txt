@@ -1,0 +1,41 @@
+import re
+import nltk
+from langdetect import detect
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+nltk.download('stopwords')
+
+corpus = []
+ps = PorterStemmer()
+all_stopwords = set(stopwords.words('english'))
+
+# Custom Hindi & Hinglish stopwords
+all_stopwords_hindi = ["से", "के", "है", "का", "की", "को", "में", "लिए", "पर", "और", 
+                       'kya', 'tum', 'hai', 'ki', 'ka', 'mein', 'se', 'ko', 'hain', 
+                       'kar', 'raha', 'rahi']
+all_stopwords.update(all_stopwords_hindi)
+all_stopwords.discard('not')  # Keep 'not' for sentiment analysis
+
+print(len(fd['crime_description']))
+
+for i in range(len(fd['crime_description'])):
+    text = fd['crime_description'][i]
+
+    # Detect language
+    try:
+        lang = detect(text)
+        if lang not in ['en', 'hi']:  # Ignore non-English & non-Hindi text
+            continue
+    except:
+        continue  # Skip if language detection fails
+    
+    # Preprocessing
+    review = re.sub('[^a-zA-Z]', ' ', text)  # Remove special characters
+    review = review.lower()
+    review = review.split()
+
+    review = [ps.stem(word) for word in review if word not in all_stopwords]
+    review = ' '.join(review)
+    
+    corpus.append(review)
